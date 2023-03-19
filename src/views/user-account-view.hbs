@@ -1,0 +1,37 @@
+{{> menu active="user-account"}}
+<section class="section">
+  <h1 class="title">User Account Details</h1>
+  <form action="/updateUserDetails" method="POST">
+    <h3 class="subtitle">Edit User Details</h3>
+    <div class="field is-horizontal">
+      <div class="field-body">
+        <div class="field">
+          <label class="label">First Name</label>
+          <input class="input" type="text" name="firstName" value="{{user.firstName}}">
+        </div>
+        <div class="field">
+          <label class="label">Last Name</label>
+          <input class="input" type="text" name="lastName" value="{{user.lastName}}">
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Email</label> <input class="input" type="text" name="email" value="{{user.email}}">
+    </div>
+    <div class="field">
+      <label class="label">Password</label> <input class="input" type="password" name="password"
+                                                   value="{{user.password}}">
+    </div>
+    <div class="field">
+      <button class="button is-warning">Submit</button>
+    </div>
+    <div>
+      <h2> Delete Your Account</h2>
+      <a href="/deleteUserAccount" class="button is-warning">
+    <span class="icon-is-small">
+      <i class="fas fa-trash"></i>
+      </span>
+      </a>
+    </div>
+  </form>
+</section>

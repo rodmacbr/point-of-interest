@@ -1,0 +1,41 @@
+{{#if (isAdmin user) }}
+  {{> admin-menu }}
+{{else}}
+  {{> menu }}
+{{/if}}
+
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      {{poi.name}}
+    </div>
+    {{> list-places}}
+    {{> add-place}}
+
+    {{> placemark-image }}
+
+    {{> list-reviews}}
+
+  </div>
+</section>
+
+
+<script>
+  function setTextUpdate(inputId, nameId) {
+    const fileInput = document.getElementById(inputId);
+    fileInput.onchange = () => {
+      if (fileInput.files.length > 0) {
+        let fileName = document.getElementById(nameId);
+        fileName.textContent = fileInput.files[0].name;
+      }
+    };
+  };
+
+  function openUpload(id) {
+    document.getElementById("upload-".concat(id)).classList.add("is-active");
+  };
+
+  function closeUpload(id) {
+    document.getElementById("upload-".concat(id)).classList.remove("is-active");
+  };
+</script>

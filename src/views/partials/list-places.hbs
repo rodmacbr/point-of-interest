@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="columns is-multiline">
+    {{#each poi.places}}
+      <div class="column is-one-quarter">
+        <div class="card">
+          <header class="card-header" style="display: flex; justify-content: center; align-items: center;">
+            <p class="card-header-title">
+              Name: {{name}}
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              Description: {{description}}
+            </div>
+            <div class="content">
+              Latitude: {{location.latitude}} , Longitude: {{location.longitude}}
+            </div>
+            <div class="content">
+              {{category}}
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="/poi/{{../poi._id}}/place/{{_id}}" class="card-footer-item">
+              <i class="fas fa-edit"></i>
+            </a>
+            <a href="/poi/{{../poi._id}}/deleteplace/{{_id}}" class="card-footer-item">
+              <i class="fas fa-trash"></i>
+            </a>
+          </footer>
+        </div>
+      </div>
+
+    {{/each}}
+  </div>
+</div>
+
