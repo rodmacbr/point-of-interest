@@ -38,8 +38,9 @@ export const poiController = {
 			const newPlace = {
 				name: request.payload.name,
 				description: request.payload.description,
-				location: { latitude: Number(request.payload.latitude), longitude: Number(request.payload.longitude) },
-				category: request.payload.category
+				latitude: Number(request.payload.latitude),
+				longitude: Number(request.payload.longitude),
+				category: request.payload.category,
 			};
 			await db.placeStore.addPlace(poi._id, newPlace);
 			return h.redirect(`/poi/${poi._id}`);

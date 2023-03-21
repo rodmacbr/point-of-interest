@@ -34,14 +34,14 @@ export const PlaceSpec = Joi.object()
 	.keys({
 		name: Joi.string().required().example("Dublin Castle"),
 		description: Joi.string().required().example("13th century Norman castle"),
-		img: Joi.array().items(Joi.object()).required().example("[]"),
-		location: Joi.object().keys({
-			latitude: Joi.number().min(-90).max(90).required(),
-			longitude: Joi.number().min(-180).max(180).required(),
-		category: Joi.string().example("Others").required()
-		}),
+		img: Joi.array().items(Joi.object()).example("[]"),
+		latitude: Joi.number().min(-90).max(90).required(),
+		longitude: Joi.number().min(-180).max(180).required(),
+		category: Joi.string().example("Others").required(),
 		poiid: IdSpec
 	})
+
+//	})
 	.label("Place");
 
 export const PlaceSpecPlus = PlaceSpec.keys({
