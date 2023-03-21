@@ -47,14 +47,13 @@ This application includes a suite of automated tests to ensure that the code is 
 - Mocha
 - MongoDB
 - Mongoose
-- Heroku
 - Git/GitHub
 - JWT
 - Bulma
 - Fontawesome
 - Swagger
 - hashing/salting passwords
-- reveiews 
+- reviews 
 
 ---
 
